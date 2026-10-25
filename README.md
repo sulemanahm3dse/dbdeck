@@ -2,6 +2,9 @@
 
 > A deck of panes for PostgreSQL · MySQL · SQLite · Redis
 
+A fast, keyboard-driven **terminal database client** in Go for **PostgreSQL, MySQL/MariaDB, SQLite, and Redis**. 
+
+
 A terminal database client written in Go. Browse a tree of schemas, tables, and keys; scroll large tables smoothly; edit cells safely; run queries in tabs; and use manual transactions—all entirely from the keyboard (with full mouse support).
 
 ```ascii
