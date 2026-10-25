@@ -55,6 +55,20 @@ asked for the password when you connect.
 | data | `hjkl` move · `0`/`$` first/last column · `s` sort asc→desc→off · `/` filter · `enter` inspect · `e` edit · `a` add row · `x` delete · `y`/`Y` copy cell/row · `f` freeze first column |
 | editor | `ctrl+r` run · `ctrl+e` explain · `ctrl+t`/`ctrl+w` new/close tab · `alt+←/→` switch tab · `alt+↑/↓` history · `tab` complete · `esc` back |
 
+## Screenshots
+
+![Connections](docs/screenshots/connections.png)
+*Connection management screen*
+
+![New Connection](docs/screenshots/new-connection.png)
+*Create connections via form or URL*
+
+![Browser](docs/screenshots/browser-explorer.png)
+*Explore schemas and tables*
+
+![Data Grid](docs/screenshots/data-view.png)
+*View and edit data*
+
 ### Scrolling
 Every list uses one `Scroller` (cursor, offset, scroll-off of 2 rows, page/half-page jumps, wheel). The grid is virtualised —
 only visible rows/columns are rendered — and table browsing loads **200 rows at a time**, fetching the next chunk
