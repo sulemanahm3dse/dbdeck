@@ -1,10 +1,10 @@
-# dbdeck
+# DBDECK v0.1.0
 
-A terminal database client in Go for **PostgreSQL, MySQL/MariaDB, SQLite and Redis**.
-Browse a tree of schemas/tables/keys, scroll large tables smoothly, edit cells safely,
-run queries in tabs, and use manual transactions — all from the keyboard (mouse works too).
+> A deck of panes for PostgreSQL · MySQL · SQLite · Redis
 
-```
+A terminal database client written in Go. Browse a tree of schemas, tables, and keys; scroll large tables smoothly; edit cells safely; run queries in tabs; and use manual transactions—all entirely from the keyboard (with full mouse support).
+
+```ascii
 ╭─ 1 Explorer ──────────╮╭─ 2 Data ───────────────────────────────────────────────────╮
 │ / filter · ? help     ││ orders · 200 of 450 rows · row 1 · sort ↑id · 6.3ms         │
 │ ▾ public              ││    id   │ status   │ amount   │ paid   │ created        █  │
@@ -15,7 +15,7 @@ run queries in tabs, and use manual transactions — all from the keyboard (mous
 │                       ││ Query  1  2   ctrl+r run · ctrl+t new tab · esc back        │
 ╰───────────────────────╯╰────────────────────────────────────────────────────────────╯
  NORMAL  TX 1 pending  hjkl move · s sort · / filter · e edit · ? help     postgres · …
-```
+ ```
 
 ## Run it
 
@@ -116,15 +116,3 @@ The integration tests **drop and recreate** `orders`, `nopk`, `pairs`, `v_done`�
 What exists: scroller and grid unit tests (exact sizing, wide characters, 100k rows); driver tests for SQLite, Postgres, MySQL and
 Redis (types, paging, filters, edits with composite/no keys, transactions + savepoints, cancellation, auth failures);
 screen-flow tests that press keys and click with the mouse, and check that every rendered frame is exactly the terminal size.
-
-## Known limits
-
-* Redis tests use `miniredis` (a Go reimplementation), not a real `redis-server`; `INFO keyspace` therefore wasn't exercised against a real server.
-* Keychain and clipboard need a desktop session (Secret Service / `xclip` / `wl-clipboard`); without them dbdeck says so and carries on.
-* No SSH tunnels, SQL syntax highlighting, schema-aware column autocomplete (keywords and table names only), or CSV export yet.
-* The tree filter matches loaded names; use enter on Redis for a whole-database key search.
-* Query history lives for the session only.
-
-
-
-
